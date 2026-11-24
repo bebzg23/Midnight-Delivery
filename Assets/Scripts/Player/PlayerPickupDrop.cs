@@ -62,8 +62,8 @@ public class PlayerPickupDrop : MonoBehaviour
         Parcel parcel = obj.GetComponentInParent<Parcel>();
         if (parcel == null) return;
 
-        parcel.isHeld = isHeld;
-        if (isHeld) parcel.pickedUp = true;
+        parcel.IsHeld = isHeld;
+        if (isHeld) parcel.PickedUp = true;
     }
 
     private void UpdatePrompt()

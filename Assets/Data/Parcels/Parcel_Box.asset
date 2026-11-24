@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b05e823148f2a44c9f49921fb83a886, type: 3}
+  m_Name: Parcel_Box
+  m_EditorClassIdentifier: Assembly-CSharp::ParcelDefinition
+  displayName: Box
+  prefab: {fileID: 8032457319791733355, guid: bef85f82383615242a18f81263ebd5d3, type: 3}

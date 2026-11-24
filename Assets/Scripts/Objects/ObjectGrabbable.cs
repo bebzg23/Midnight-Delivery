@@ -8,11 +8,13 @@ public class ObjectGrabbable : MonoBehaviour
     private Collider[] myColliders;
     private Collider[] ignoredPlayerColliders;
     private Coroutine restoreRoutine;
+    private Parcel parcel;
 
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
         myColliders = GetComponentsInChildren<Collider>();
+        parcel = GetComponent<Parcel>();
     }
 
     public void Grab(Transform grabPoint, Collider[] playerColliders)
@@ -32,12 +34,15 @@ public class ObjectGrabbable : MonoBehaviour
 
         ignoredPlayerColliders = playerColliders;
         SetIgnorePlayerCollision(true);
+        if (parcel != null) parcel.IsHeld = true;
     }
 
     public void Drop()
     {
         objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
+
+        if (parcel != null) parcel.IsHeld = false;
 
         // Don't re-enable immediately, or the parcel may pop out of the player's capsule
         restoreRoutine = StartCoroutine(RestoreCollisionWhenClear());
